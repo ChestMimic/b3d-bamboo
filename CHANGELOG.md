@@ -1,7 +1,7 @@
 #Change Log
 All notable changes will be tracked in this file
 
-##[Unreleased]
+##[0.1.1] - 2017-02-12
 ###Added
 - CHANGELOG
 - README
