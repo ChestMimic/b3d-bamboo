@@ -19,7 +19,7 @@
 bl_info = {
 	"name":"Bamboo Generator",
 	"description":"Generate parametric Bamboo",
-	"version":(0,1,0),
+	"version":(0,1,1),
 	"blender":(2,78,0),
 	"support":"TESTING",
 	"category":"Object",
@@ -59,14 +59,19 @@ class Bamboo:
 
 		angle = 360/self.segments
 
-		polarX = lambda n: self.radius1 * math.cos(radians(angle*n))
-		polarY = lambda n: self.radius1 * math.sin(radians(angle*n))
+		#Lamda functions for X and Y values of radius/angle combinations
+		#These are mostly because I was lazy and didn't want to make a full function
+		baseRadiiX = lambda r, n: r* math.cos(radians(angle*n))
+		baseRadiiY = lambda r, n: r* math.sin(radians(angle*n))
 
-		ringX = lambda n: self.radius2 * math.cos(radians(angle*n))
-		ringY = lambda n: self.radius2 * math.sin(radians(angle*n))
+		polarX = lambda n: baseRadiiX(self.radius1, n)
+		polarY = lambda n: baseRadiiY(self.radius1, n)
 
-		coreX = lambda n: self.radiusInternal * math.cos(radians(angle*n))
-		coreY = lambda n: self.radiusInternal * math.sin(radians(angle*n))
+		ringX = lambda n: baseRadiiX(self.radius2, n)
+		ringY = lambda n: baseRadiiY(self.radius2, n)
+
+		coreX = lambda n: baseRadiiX(self.radiusInternal, n)
+		coreY = lambda n: baseRadiiY(self.radiusInternal, n)
 
 		#Vertexes
 		#Move up bamboo stalk for outside edge
@@ -140,6 +145,7 @@ class Bamboo:
 
 
 class BambooOperator(bpy.types.Operator):
+	#Interact with Blender API
 	bl_idname = "object.bamboo"
 	bl_label = "Bamboo Generator"
 	bl_options = {'REGISTER', 'UNDO'}

@@ -24,7 +24,7 @@ Addon can be called through the Add Object menu, as Bamboo Generator
 Spawns a bamboo stalk mesh at the 3D cursor location
 
 Useer can adjust parameters to customize bamboo stalk
-- Radius: Radius of the main stalk body
+- Stalk Radius: Radius of the main stalk body
 - Inner Radius: Radius of the inside of the stalk, as % of stalk
 - Ridge Radius: Radius of the protruding ridge, as % of stalk
 - Segments: Number of cuts around stalk (minimum 3)
