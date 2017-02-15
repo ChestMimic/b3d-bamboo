@@ -1,6 +1,6 @@
 Parametric Bamboo (Blender 3D add-on)
 ================
-Version 0.1.1
+Version 0.1.2
 -----------
 (c) Mark Fitzgibbon 2017
 

@@ -1,6 +1,10 @@
 #Change Log
 All notable changes will be tracked in this file
 
+##[0.1.2] - 2017-02-15
+###Changed
+- Swapped radiusInternal and radius2 calculations, fixing an undocumented error
+
 ##[0.1.1] - 2017-02-12
 ###Added
 - CHANGELOG

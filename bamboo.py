@@ -19,7 +19,7 @@
 bl_info = {
 	"name":"Bamboo Generator",
 	"description":"Generate parametric Bamboo",
-	"version":(0,1,1),
+	"version":(0,1,2),
 	"blender":(2,78,0),
 	"support":"TESTING",
 	"category":"Object",
@@ -43,8 +43,8 @@ class Bamboo:
 		self.stacks = verticalSegs
 		self.segHeight = segHeight
 
-		self.radius2 = radius1 * ringRadius
-		self.radiusInternal = radius1 + radius1*innerRadius
+		self.radius2 = radius1 + radius1 * ringRadius
+		self.radiusInternal = radius1*innerRadius
 		self.ringHeight = ringHeight
 
 	def genMeshData(self):
